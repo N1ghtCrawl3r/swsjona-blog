@@ -42,13 +42,13 @@ and so on.
 
 Simply, the EXIF data can be observed by checking out the Properties of the Image and navigating to the Details Panel.
 
-![OSINT%20More%20like%20OhSINT/0.1.png](./OSINT%20More%20like%20OhSINT/0.1.png)
+![OSINT%20More%20like%20OhSINT/0.1.png](./0.1.png)
 
 This provides trivial information, but does not paint the complete picture. More can be dug up using **exiftool.** Exiftool is powerful command-line application for reading, writing and editing meta information in a wide variety of files.
 
 Let's observe the image with exiftool. 
 
-![OSINT%20More%20like%20OhSINT/1.png](./OSINT%20More%20like%20OhSINT/1.png)
+![OSINT%20More%20like%20OhSINT/1.png](./1.png)
 
 Aha! It is clear that someone holds copyright on this image, OWoodflint. It hints to be an username. The next step is to find if there is any information on the internet about "OWoodflint". Investigation continues! 
 
@@ -56,15 +56,15 @@ Aha! It is clear that someone holds copyright on this image, OWoodflint. It hint
 
 Query "OWoodflint" on google or on any search engine and try to gather meaningful data. 
 
-![OSINT%20More%20like%20OhSINT/2.png](./OSINT%20More%20like%20OhSINT/2.png)
+![OSINT%20More%20like%20OhSINT/2.png](./2.png)
 
 3 leads have been discovered connected to this username. The Twitter account reveals the answer to the 1st question of the challenge. The user's avatar is a **cat**.
 
-![OSINT%20More%20like%20OhSINT/3.png](/.OSINT%20More%20like%20OhSINT/3.png)
+![OSINT%20More%20like%20OhSINT/3.png](./3.png)
 
 The next question asks for the user's city. Examining the twitter account does not reveal anything about a location. Is that right? Look again. 
 
-![OSINT%20More%20like%20OhSINT/4.png](./OSINT%20More%20like%20OhSINT/4.png)
+![OSINT%20More%20like%20OhSINT/4.png](./4.png)
 
 ### Identifying WAPs
 
@@ -72,7 +72,7 @@ BSSID is an unique address given to a Wireless Access Point (WAP) to recognize i
 
 > To use [wigle.net](http://wigle.net), an account should be created.
 
-![OSINT%20More%20like%20OhSINT/5.png](./OSINT%20More%20like%20OhSINT/5.png)
+![OSINT%20More%20like%20OhSINT/5.png](./5.png)
 
 Searching for OWoodflint's BSSID points us the user's location which is **London**. Another question solved!
 
@@ -82,11 +82,11 @@ The 3rd question asks us for the SSID. SSID is a customizable name given to a WA
 
 It's time to explore the other search results (i.e the GitHub page and the Blog). The user's personal email address can be found in the [README.md](http://readme.md) file in their GitHub repository.
 
-![OSINT%20More%20like%20OhSINT/6.png](./OSINT%20More%20like%20OhSINT/6.png)
+![OSINT%20More%20like%20OhSINT/6.png](./6.png)
 
 The next task is to find out this user's holiday location. Conveniently, the user has disclosed this in their blog. 
 
-![OSINT%20More%20like%20OhSINT/7.png](./OSINT%20More%20like%20OhSINT/7.png)
+![OSINT%20More%20like%20OhSINT/7.png](./7.png)
 
 I hope they had a great experience at **New York**. The final task is to find OWoodflint's password. It is a bit trickier. After going through the pages again and again, searching endlessly for the password, it was placed in a basic location; the blog's source code! 
 
@@ -94,7 +94,7 @@ Press F12 and inspect the source code of the blog. A weird pattern of text appea
 
  
 
-![OSINT%20More%20like%20OhSINT/8.png](./OSINT%20More%20like%20OhSINT/8.png)
+![OSINT%20More%20like%20OhSINT/8.png](./8.png)
 
 ## Final Thoughts
 
