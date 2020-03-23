@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
+      resolve: `@n1ghtCrawl3r/gatsby-theme-minimal-blog`,
       options: {
         navigation: [
           {
