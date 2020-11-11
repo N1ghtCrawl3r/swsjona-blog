@@ -68,6 +68,8 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
 }
