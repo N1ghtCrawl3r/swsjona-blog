@@ -6,19 +6,19 @@ tags:
   - 2FA
   - Passwords
   - Security
-banner: ./cover.jpeg
+banner: ./cover.jpg
 ---
 
 We are all accustomed to using passwords to access websites and computer resources. 
 The result of this has cultivated situations where users re-use the same passwords on multiple websites. 
 Even if they used unique passwords, they tend to be short passwords that are easy to remember and also, easy to guess by an attacker. 
-How often have you used the same password on multiple websites? On average, employees reuse a password 13 times.
+How often have you used the same password on multiple websites? On average, employees reuse a password [13 times](https://www.lastpass.com/state-of-the-password/global-password-security-report-2019).
 
 Let’s assume employees have long passwords which are challenging to guess; it would be written in a sticky note on their desk. One good solution is to use a password manager; local or in the cloud, behind one (hopefully) strong master password. What if this digital vault containing all your passwords gets compromised? Unlikely to happen, but a viable threat. Even though a good password manager stores all your passwords safely, there are many other circumstances where your passwords could be leaked :
 
-* The website in which you own an account can suffer a data breach, leaking your password hashes. Cracking it would be a piece of cake possible with today’s GPUs and cloud computing (Make sure your password has 16 or more characters). Worst case? Your actual password being revealed if they had stored it in plaintext in any of their servers (yes! Some companies still do this).
+* The website in which you own an account can suffer a data breach, leaking your password hashes. Cracking it would be a piece of cake possible with today’s GPUs and cloud computing (Make sure your password has 16 or more characters). Worst case? Your actual password being revealed if they had stored it in plaintext in any of their servers (yes! Some [companies still do this](https://krebsonsecurity.com/2019/03/facebook-stored-hundreds-of-millions-of-user-passwords-in-plain-text-for-years/)).
 
-A data breach report given by Verizon for the year 2019 found 43% of the breaches involved small business victims and 56% of them took months or longer to discover!
+A data breach [report](https://enterprise.verizon.com/resources/reports/dbir/2019) given by Verizon for the year 2019 found [43% of the breaches](https://enterprise.verizon.com/resources/reports/dbir/2019/summary-of-findings/) involved small business victims and [56% of them] (https://enterprise.verizon.com/resources/reports/dbir/2019/summary-of-findings/) took months or longer to discover!
 
 * Falling prey to a phishing campaign.
 * Malware stealing all your stored credentials.
@@ -26,17 +26,17 @@ A data breach report given by Verizon for the year 2019 found 43% of the breache
 
 Passwords have been always notorious to handle. But, passwords are only a small part of the available authentication factors.
 
-# Authentication Factor
+## Authentication Factor
 
-An Authentication Factor is a category of credentials used to verify identity. It is something a claimant possesses or controls. Authenticator Factors can be of three types ;
+An Authentication Factor is a category of credentials used to verify identity. It is something a claimant possesses or controls. Authenticator Factors can be of [three] (https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf) types ;
 
 1. Something you know — Password, PIN Code
 2. Something you have — Smart Card, Hand-Held tokens
 3. Something you are — Fingerprint, Retinal or Iris prints
 
-# Multi-Factor Authentication (MFA)
+## Multi-Factor Authentication (MFA)
 
-NIST describes Multi-factor Authentication (MFA) is when an authentication system requires more than one distinct authentication factor for successful authentications. MFA can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that provide different factors.
+NIST [describes](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf) Multi-factor Authentication (MFA) is when an authentication system requires more than one distinct authentication factor for successful authentications. MFA can be performed using a single authenticator that provides more than one factor or by a combination of authenticators that provide different factors.
 
 Confusing? Let me explain MFA with an example you are familiar with. When you want to withdraw money from the ATM, how do you authenticate yourself? You prove that you are the claimant using two distinct methods;
 
@@ -45,25 +45,29 @@ Confusing? Let me explain MFA with an example you are familiar with. When you wa
 
 This is MFA! You proved yourself using two distinct factors. Bear in mind, increasing the number of authentication factors is inversely proportional to the usability of the system.
 
+![Problem_With_Passwords/usability_security_comparision.png](usability and security)
+
+Usually, the sweet spot is using two factors. This entails Two-Factor Authentication (2FA). It has proven to be effective which made [57% of businesses](https://www.lastpass.com/state-of-the-password/global-password-security-report-2019) globally have employees using 2FA.
 
 
-Usually, the sweet spot is using two factors. This entails Two-Factor Authentication (2FA). It has proven to be effective which made 57% of businesses globally have employees using 2FA.
+### Two-factor Authentication Flow
 
-
-## Two-factor Authentication Flow
-
+![Problem_With_Passwords/2FA_Flow.png](2FA Flow)
 
 In a web or mobile application, the following options are available to set up 2FA ;
+
+
+![Problem_With_Passwords/2FA_Web.png](2FA for Web/Mobile)
 
 In here, the 2nd factor of authentication could be any of these,
 
 1. A One Time Passcode (OTP) sent over SMS or a phone call.
-2. A code generated by any authenticators(Microsoft Authenticator App, Google Authenticator, Authy)
-3. Hardware tokens (Yubikey, Google Titan)
+2. A code generated by any authenticators([Microsoft Authenticator App](https://www.microsoft.com/en-us/account/authenticator), [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en), [Authy](https://authy.com/))
+3. Hardware tokens ([Yubikey](https://www.yubico.com/), [Google Titan](https://www.yubico.com/))
 
 The user has can set up multiple factors (MFA) in case they do not have access to one of them. For successful authentication, the user credentials and the available 2nd Factor are required.
 
-# Conclusion
+## Conclusion
 
 MFA intents to make an attack more difficult because attackers need to compromise both factors. Besides, an Out-of-band method enhances the challenge. Usually, the second factor can notify a user of an attack; if you receive an OTP over SMS, you would instantly know your password has been compromised and someone is trying to access your account. Then, you can instantly change your password.
 
